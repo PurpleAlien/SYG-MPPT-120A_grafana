@@ -3,7 +3,7 @@ Implementation for a SUYEEGO SYG-MPPT-120A 500V 120A mppt solar charge controlle
 This script is intended to be used with:
 https://github.com/BarkinSpider/SolarShed/
 
-This charge controller can be found on Alibaba: 
+This charge controller can be found on Alibaba:
 https://offer.alibaba.com/cps/f4jdbq3f?bm=cps&src=saf&productId=1601042916583
 
 A 500V input capable MPPT controller for a price around US$140 - it's a bargain. 
