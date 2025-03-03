@@ -36,7 +36,14 @@ def readSCC(fileObj):
                     # Read all the data
                     available = scc.inWaiting()
                     data = bytearray(scc.read(available))
-        
+                    # length of data, without length byte or checksum
+                    length = data[0]
+ 
+                    # make sure we have all the data
+                    if available - length != 3:
+                        scc.reset_input_buffer()
+                        raise Exception("Data incomplete.")
+
                     # PV Voltage
                     pvVolts = struct.unpack_from('<H', data, 7)[0]/10
                     valName  = "mode=\"pvVolts\""
