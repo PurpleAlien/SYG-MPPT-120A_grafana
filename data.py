@@ -58,6 +58,12 @@ def readSCC(fileObj):
                     dataStr  = f"HV_SCC{valName} {batVolts}"
                     print(dataStr, file=fileObj)
 
+                    loadWatts = struct.unpack_from('<H', data, 9)[0]
+                    valName  = "mode=\"loadWatts\""
+                    valName  = "{" + valName + "}"
+                    dataStr  = f"HV_SCC{valName} {loadWatts}"
+                    print(dataStr, file=fileObj)
+                    
         scc.reset_input_buffer()
 
     except Exception as e :
