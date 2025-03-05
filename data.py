@@ -57,7 +57,8 @@ def readSCC(fileObj):
                     valName  = "{" + valName + "}"
                     dataStr  = f"HV_SCC{valName} {batVolts}"
                     print(dataStr, file=fileObj)
-
+                    
+                    # PV Watts generated
                     loadWatts = struct.unpack_from('<H', data, 9)[0]
                     valName  = "mode=\"loadWatts\""
                     valName  = "{" + valName + "}"
