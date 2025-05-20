@@ -40,7 +40,14 @@ def readSCC(fileObj):
         valName  = "{" + valName + "}"
         dataStr  = f"HV_SCC{valName} {batVolts}"
         print(dataStr, file=fileObj)
-                   
+
+        # Battery Current
+        batAmps = registers[7]
+        valName  = "mode=\"batAmps\""
+        valName  = "{" + valName + "}"
+        dataStr  = f"HV_SCC{valName} {batAmps}" 
+        print(dataStr, file=fileObj)       
+           
         # PV Watts generated
         loadWatts = registers[4]
         valName  = "mode=\"loadWatts\""
